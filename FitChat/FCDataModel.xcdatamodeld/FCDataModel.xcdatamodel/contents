@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D131" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="FCChallenge" representedClassName="PRODUCT_MODULE_NAME.FCChallenge" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FCUser" inverseName="challenges" inverseEntity="FCUser" syncable="YES"/>
+    </entity>
+    <entity name="FCUser" representedClassName="PRODUCT_MODULE_NAME.FCUser" syncable="YES">
+        <attribute name="avatar" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="challenges" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FCChallenge" inverseName="players" inverseEntity="FCChallenge" syncable="YES"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FCUser" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="FCChallenge" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="FCUser" positionX="198" positionY="-141" width="128" height="118"/>
+    </elements>
+</model>
