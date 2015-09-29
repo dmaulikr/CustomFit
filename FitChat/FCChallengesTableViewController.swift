@@ -8,8 +8,7 @@
 
 import UIKit
 
-class FCChallengesTableViewController: UITableViewController {
-    var challenges: [FCChallenge] = []
+class FCChallengesTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,17 +19,13 @@ class FCChallengesTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-        return 0;
+    
+    func requestFitbitAccess() {
+        let authURL = NSURL(string: "https://www.fitbit.com/oauth2/authorize?client_id=229VK8&redirect_uri=fitbitclient://&scope=activity,heartrate,profile,social")
+        UIApplication.sharedApplication().openURL(authURL!)
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    @IBAction func request(sender: AnyObject) {
+        requestFitbitAccess();
     }
 }
-

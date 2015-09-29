@@ -12,7 +12,27 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        exchangeCodeInURL(url);
+        return true
+    }
+    
+    func exchangeCodeInURL(codeURL : NSURL) {
+        if let code = codeURL.query {
+            let request = NSMutableURLRequest(URL: NSURL(string: "https://api.fitbit.com/oauth2/token?client_id=229VK8&&client_secret=633c9d1ecad10e7b36f733d5ede60c82grant_type=authorization_code&redirect_uri=fitbitclient://")!)
+            request.HTTPMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Accept")
+            NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                if let httpResponse = response as? NSHTTPURLResponse {
+                    var jsonError: NSError?
+                    if let rootObject = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as? [String : AnyObject], token = rootObject["access_token"] as? String {
+                        NSLog(token);
+                    }
+                }
+            }).resume()
+        }
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

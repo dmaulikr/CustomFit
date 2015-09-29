@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitChat/AppDelegate.swift"
+            timestampString = "465207778.441902"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "exchangeCodeInURL(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc FitChat.AppDelegate.application (FitChat.AppDelegate)(ObjectiveC.UIApplication, handleOpenURL : ObjectiveC.NSURL) -&gt; Swift.Bool"
+                  moduleName = "FitChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farwa/Developer/FitChat/FitChat/AppDelegate.swift"
+                  timestampString = "465207957.497694"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc FitChat.AppDelegate.exchangeCodeInURL (FitChat.AppDelegate)(ObjectiveC.NSURL) -&gt; ()"
+                  moduleName = "FitChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farwa/Developer/FitChat/FitChat/AppDelegate.swift"
+                  timestampString = "465207957.497963"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed, Arg[1] = Owned To Guaranteed&gt; of FitChat.AppDelegate.exchangeCodeInURL (FitChat.AppDelegate)(ObjectiveC.NSURL) -&gt; ()"
+                  moduleName = "FitChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farwa/Developer/FitChat/FitChat/AppDelegate.swift"
+                  timestampString = "465207957.498421"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitChat/AppDelegate.swift"
+            timestampString = "465207811.029719"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "exchangeCodeInURL(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitChat.AppDelegate.application (FitChat.AppDelegate)(ObjectiveC.UIApplication, handleOpenURL : ObjectiveC.NSURL) -&gt; Swift.Bool"
+                  moduleName = "FitChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farwa/Developer/FitChat/FitChat/AppDelegate.swift"
+                  timestampString = "465207957.531318"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "189">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc FitChat.AppDelegate.exchangeCodeInURL (FitChat.AppDelegate)(ObjectiveC.NSURL) -&gt; ()"
+                  moduleName = "FitChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farwa/Developer/FitChat/FitChat/AppDelegate.swift"
+                  timestampString = "465207957.533044"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "165">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc FitChat.AppDelegate.exchangeCodeInURL (FitChat.AppDelegate)(ObjectiveC.NSURL) -&gt; ()"
+                  moduleName = "FitChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farwa/Developer/FitChat/FitChat/AppDelegate.swift"
+                  timestampString = "465207957.533358"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "173">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed, Arg[1] = Owned To Guaranteed&gt; of FitChat.AppDelegate.exchangeCodeInURL (FitChat.AppDelegate)(ObjectiveC.NSURL) -&gt; ()"
+                  moduleName = "FitChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farwa/Developer/FitChat/FitChat/AppDelegate.swift"
+                  timestampString = "465207957.533614"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitChat/AppDelegate.swift"
+            timestampString = "465207819.36947"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "exchangeCodeInURL(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitChat/AppDelegate.swift"
+            timestampString = "465207821.578202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "exchangeCodeInURL(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

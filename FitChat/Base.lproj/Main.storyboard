@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -75,45 +75,46 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="R7s-tc-FrU" kind="relationship" relationship="rootViewController" id="qep-Tu-TXw"/>
+                        <segue destination="G1r-BZ-L9f" kind="relationship" relationship="rootViewController" id="eZ6-tf-z85"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rY6-hi-C0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Challenges-->
-        <scene sceneID="lWC-7k-fCd">
+        <!--Challenges Table View Controller-->
+        <scene sceneID="4J6-d9-SjT">
             <objects>
-                <tableViewController id="R7s-tc-FrU" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="kZq-os-nx3">
+                <viewController id="G1r-BZ-L9f" customClass="FCChallengesTableViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VuM-hF-iRv"/>
+                        <viewControllerLayoutGuide type="bottom" id="zzR-dE-8iX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BPx-Uj-Gm8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zVM-JJ-2dX">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zVM-JJ-2dX" id="bws-3k-WWn">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kmg-yv-7rQ">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kmg-yv-7rQ" id="hNk-rI-B0P">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="R7s-tc-FrU" id="s5t-zk-B2X"/>
-                            <outlet property="delegate" destination="R7s-tc-FrU" id="gm6-YA-nQZ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Challenges" id="peH-tq-flw"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mcm-Qb-2Je" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyG-aC-iBC">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="request:" destination="G1r-BZ-L9f" eventType="touchUpInside" id="eMf-4D-KlZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="SyG-aC-iBC" secondAttribute="centerX" id="7HB-07-ao6"/>
+                            <constraint firstAttribute="centerY" secondItem="SyG-aC-iBC" secondAttribute="centerY" id="mhs-EH-qLP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jWl-Hm-y8B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A8P-qE-0Nt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479" y="-313"/>
+            <point key="canvasLocation" x="1473" y="-283"/>
         </scene>
     </scenes>
     <resources>
