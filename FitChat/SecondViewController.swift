@@ -2,7 +2,7 @@
 //  SecondViewController.swift
 //  FitChat
 //
-//  Created by farwa on 2015-08-31.
+//  Created by Farwa Naqi on 2015-08-31.
 //  Copyright (c) 2015 Farwa Naqi. All rights reserved.
 //
 

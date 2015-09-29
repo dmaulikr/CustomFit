@@ -2,37 +2,17 @@
 //  AppDelegate.swift
 //  FitChat
 //
-//  Created by farwa on 2015-08-31.
+//  Created by Farwa Naqi on 2015-08-31.
 //  Copyright (c) 2015 Farwa Naqi. All rights reserved.
 //
 
 import UIKit
+import OAuthSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
-        exchangeCodeInURL(url);
-        return true
-    }
-    
-    func exchangeCodeInURL(codeURL : NSURL) {
-        if let code = codeURL.query {
-            let request = NSMutableURLRequest(URL: NSURL(string: "https://api.fitbit.com/oauth2/token?client_id=229VK8&&client_secret=633c9d1ecad10e7b36f733d5ede60c82grant_type=authorization_code&redirect_uri=fitbitclient://")!)
-            request.HTTPMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
-            NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-                if let httpResponse = response as? NSHTTPURLResponse {
-                    var jsonError: NSError?
-                    if let rootObject = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as? [String : AnyObject], token = rootObject["access_token"] as? String {
-                        NSLog(token);
-                    }
-                }
-            }).resume()
-        }
-    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -59,6 +39,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        if (url.host == "oauth-callback") {
+            if (url.path!.hasPrefix("/twitter") || url.path!.hasPrefix("/flickr")
+                || url.path!.hasPrefix("/withings") || url.path!.hasPrefix("/linkedin") || url.path!.hasPrefix("/bitbucket") || url.path!.hasPrefix("/smugmug") || url.path!.hasPrefix("/intuit") || url.path!.hasPrefix("/zaim") || url.path!.hasPrefix("/tumblr")) {
+                    OAuth1Swift.handleOpenURL(url)
+            }
+            if ( url.path!.hasPrefix("/github" ) || url.path!.hasPrefix("/instagram" ) || url.path!.hasPrefix("/foursquare") || url.path!.hasPrefix("/dropbox") || url.path!.hasPrefix("/dribbble") || url.path!.hasPrefix("/salesforce") || url.path!.hasPrefix("/google") || url.path!.hasPrefix("/linkedin2") || url.path!.hasPrefix("/slack") || url.path!.hasPrefix("/uber")) {
+                OAuth2Swift.handleOpenURL(url)
+            }
+        } else {
+            // Google provider is the only one wuth your.bundle.id url schema.
+            OAuth2Swift.handleOpenURL(url)
+        }
+        return true
     }
 
 
