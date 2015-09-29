@@ -4,17 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Bolts.xcscheme</key>
+		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-OAuthSwift.xcscheme</key>
+		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Parse.xcscheme</key>
+		<key>OAuthSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0674921303E4AED212AE2099</key>
+		<key>30BA5DAF216419DEC39777C961AEAFFF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>29655E9F833F0895C7A0B0CE</key>
+		<key>4D767CD9AC951E6C9B4AD815E721C2CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3BAE760CB37C389026501AAB</key>
+		<key>9403CB032F7C41526158DD50E8B9B197</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>58E7CC813A33C0E62E957A18</key>
+		<key>9AE8BCCDF500BFC0AB45DC8692423720</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C097A00407141C70E1E8DF24F6EE318E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

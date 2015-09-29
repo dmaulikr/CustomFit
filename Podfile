@@ -4,3 +4,4 @@ use_frameworks!
 
 pod 'OAuthSwift'
 pod 'Parse'
+pod 'AFNetworking'
