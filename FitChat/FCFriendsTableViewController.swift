@@ -12,6 +12,7 @@ import AFNetworking
 class FCFriendsTableViewController: UITableViewController {
     
     let FriendTableViewCellReuseId :String = "FriendCellReuseId";
+    var friends: NSArray = [];
 
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -21,9 +22,13 @@ class FCFriendsTableViewController: UITableViewController {
         
         let val = String(format: "Bearer %@", authtoken);
         manager.requestSerializer.setValue(val, forHTTPHeaderField: "Authorization");
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content-Type");
         manager.GET("https://api.fitbit.com/1/user/-/friends.json", parameters: nil, success: {
             (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-            print("JSON: " + responseObject.description);
+            if let jsonDict = responseObject as? NSDictionary {
+                self.friends = jsonDict.objectForKey("friends") as! NSArray;
+                self.tableView.reloadData();
+            }
             }, failure: {
                 (operation: AFHTTPRequestOperation!,error: NSError!) in
                 print("Error: " + error.localizedDescription);
@@ -38,24 +43,32 @@ class FCFriendsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1;
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.friends.count;
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell:FCFriendListTableViewCell = tableView.dequeueReusableCellWithIdentifier(FriendTableViewCellReuseId, forIndexPath: indexPath) as! FCFriendListTableViewCell;
+        
+        let data:NSDictionary = self.friends.objectAtIndex(indexPath.row).objectForKey("user") as! NSDictionary;
+        let nickname:String = data.objectForKey("displayName") as! String!;
+        
+        cell.nicknameLabel!.text = nickname;
+        
+        let avatarStr:String = data.objectForKey("avatar") as! String!;
+        let url:NSURL = NSURL(string: avatarStr)!;
+//        print(url);
+        if let data = NSData(contentsOfURL: url) {
+            cell.avatar!.image = UIImage(data: data);
+        }
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
