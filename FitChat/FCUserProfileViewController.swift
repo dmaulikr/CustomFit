@@ -45,31 +45,23 @@ class FCUserProfileViewController: UIViewController {
     }
     
     func getUserProfile() {
-        let manager = AFHTTPRequestOperationManager();
-        let defaults = NSUserDefaults.standardUserDefaults();
-        let authToken = defaults.stringForKey(Constants.UserDefaultKey.AuthToken)!;
-        
-        let val = String(format: "Bearer %@", authToken);
-        manager.requestSerializer.setValue(val, forHTTPHeaderField: "Authorization");
-        manager.GET("https://api.fitbit.com/1/user/-/profile.json", parameters: nil, success: {
-                (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                if let jsonDict = responseObject as? NSDictionary {
-                    let userInfo = jsonDict.objectForKey("user");
-                    self.nameLabel.text = userInfo?.objectForKey("fullName") as? String;
-                    let avatarStr:String = (userInfo?.objectForKey("avatar") as? String)!;
-                    let url:NSURL = NSURL(string: avatarStr)!;
-                    if let data = NSData(contentsOfURL: url) {
-                        self.avatar.image = UIImage(data: data);
-                    }
-                    let steps = userInfo?.objectForKey("averageDailySteps") as! NSNumber;
-                    self.avgStepsLabel.text = String(format: "Average Daily Steps: %@", steps);
+        RequestManager.getProfile(nil, success: {
+            (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            if let jsonDict = responseObject as? NSDictionary {
+                let userInfo = jsonDict.objectForKey("user");
+                self.nameLabel.text = userInfo?.objectForKey("fullName") as? String;
+                let avatarStr:String = (userInfo?.objectForKey("avatar") as? String)!;
+                let url:NSURL = NSURL(string: avatarStr)!;
+                if let data = NSData(contentsOfURL: url) {
+                    self.avatar.image = UIImage(data: data);
                 }
+                let steps = userInfo?.objectForKey("averageDailySteps") as! NSNumber;
+                self.avgStepsLabel.text = String(format: "Average Daily Steps: %@", steps);
+            }
             }, failure: {
                 (operation: AFHTTPRequestOperation!,error: NSError!) in
                 print("Error: " + error.localizedDescription);
         });
-        
-        
     }
     
 }

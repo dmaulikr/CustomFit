@@ -17,13 +17,7 @@ class FCFriendsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        let authtoken:String = NSUserDefaults.standardUserDefaults().stringForKey(Constants.UserDefaultKey.AuthToken)!;
-        let manager = AFHTTPRequestOperationManager();
-        
-        let val = String(format: "Bearer %@", authtoken);
-        manager.requestSerializer.setValue(val, forHTTPHeaderField: "Authorization");
-        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content-Type");
-        manager.GET("https://api.fitbit.com/1/user/-/friends.json", parameters: nil, success: {
+        RequestManager.getFriends("-", parameters: nil, success: {
             (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
             if let jsonDict = responseObject as? NSDictionary {
                 self.friends = jsonDict.objectForKey("friends") as! NSArray;
