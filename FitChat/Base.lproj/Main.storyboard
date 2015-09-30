@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Second-->
@@ -95,18 +96,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyG-aC-iBC">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="256" y="285" width="88" height="30"/>
+                                <state key="normal" title="Authenticate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="request:" destination="G1r-BZ-L9f" eventType="touchUpInside" id="eMf-4D-KlZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mL-NR-Vu2">
+                                <rect key="frame" x="247" y="325" width="106" height="28"/>
+                                <state key="normal" title="Get user profile"/>
+                                <connections>
+                                    <action selector="getUserProfile:" destination="G1r-BZ-L9f" eventType="touchUpInside" id="bOb-XE-O26"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="SyG-aC-iBC" secondAttribute="centerX" id="7HB-07-ao6"/>
+                            <constraint firstItem="5mL-NR-Vu2" firstAttribute="top" secondItem="SyG-aC-iBC" secondAttribute="bottom" constant="10" id="Rnf-bl-Va0"/>
+                            <constraint firstItem="5mL-NR-Vu2" firstAttribute="centerX" secondItem="BPx-Uj-Gm8" secondAttribute="centerX" id="Zk5-ns-ucA"/>
+                            <constraint firstItem="zzR-dE-8iX" firstAttribute="top" secondItem="5mL-NR-Vu2" secondAttribute="bottom" constant="198" id="cNG-eX-w3D"/>
                             <constraint firstAttribute="centerY" secondItem="SyG-aC-iBC" secondAttribute="centerY" id="mhs-EH-qLP"/>
                         </constraints>
                     </view>
