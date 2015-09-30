@@ -18,13 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomePageHeader" translatesAutoresizingMaskIntoConstraints="NO" id="usI-dX-n2B">
+                                <rect key="frame" x="25" y="45" width="550" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fwB-Tb-LJ7"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phg-o9-yFV">
                                 <rect key="frame" x="0.0" y="520" width="600" height="55"/>
                                 <color key="backgroundColor" red="0.29411764705882354" green="0.72156862745098038" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="IKY-SD-msT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <state key="normal" title="Log In with Fitbit">
                                     <color key="titleColor" red="0.97365736874670727" green="1" blue="0.9804096159118546" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -32,34 +38,36 @@
                                     <action selector="requestFitbitAccess:" destination="HUD-3w-5bx" eventType="touchUpInside" id="VKq-Id-MvX"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomePageHeader" translatesAutoresizingMaskIntoConstraints="NO" id="usI-dX-n2B">
-                                <rect key="frame" x="-200" y="45" width="1000" height="40"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29K-3T-T1Q">
+                                <rect key="frame" x="167" y="210" width="265" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="fwB-Tb-LJ7"/>
+                                    <constraint firstAttribute="height" constant="180" id="lsG-gp-7eK"/>
+                                    <constraint firstAttribute="width" constant="265" id="v2v-Ml-zdg"/>
                                 </constraints>
-                            </imageView>
+                                <string key="text">FitChat is an extension of the Fitbit app that allows you to create your own custom fitness challenges, chat with friends, and share workout logs and photos
+
+Get started by signing in below.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="phg-o9-yFV" firstAttribute="centerY" secondItem="VQI-Pe-keV" secondAttribute="centerY" id="2Dh-N4-Iwf"/>
+                            <constraint firstAttribute="trailing" secondItem="phg-o9-yFV" secondAttribute="trailing" id="4uq-oI-cVq"/>
+                            <constraint firstItem="usI-dX-n2B" firstAttribute="leading" secondItem="VQI-Pe-keV" secondAttribute="leading" constant="25" id="FXY-gB-wYD"/>
                             <constraint firstItem="usI-dX-n2B" firstAttribute="top" secondItem="80K-X2-dI8" secondAttribute="bottom" constant="25" id="LQl-hJ-tpG"/>
-                            <constraint firstItem="usI-dX-n2B" firstAttribute="top" secondItem="80K-X2-dI8" secondAttribute="bottom" id="LXi-c8-8u4"/>
-                            <constraint firstAttribute="trailing" secondItem="phg-o9-yFV" secondAttribute="trailing" id="RpE-X5-NKO"/>
-                            <constraint firstAttribute="trailing" secondItem="usI-dX-n2B" secondAttribute="trailing" id="X2K-cg-3IG"/>
-                            <constraint firstItem="phg-o9-yFV" firstAttribute="centerX" secondItem="VQI-Pe-keV" secondAttribute="centerX" id="h6i-4l-Zs7"/>
-                            <constraint firstItem="usI-dX-n2B" firstAttribute="centerX" secondItem="VQI-Pe-keV" secondAttribute="centerX" id="iGU-su-9q7"/>
-                            <constraint firstItem="usI-dX-n2B" firstAttribute="leading" secondItem="VQI-Pe-keV" secondAttribute="leading" id="ihe-CX-Y41"/>
-                            <constraint firstItem="phg-o9-yFV" firstAttribute="leading" secondItem="VQI-Pe-keV" secondAttribute="leading" id="sdw-Q1-zBU"/>
-                            <constraint firstItem="phg-o9-yFV" firstAttribute="centerX" secondItem="VQI-Pe-keV" secondAttribute="centerX" id="uRo-1Q-fAa"/>
+                            <constraint firstItem="29K-3T-T1Q" firstAttribute="centerX" secondItem="VQI-Pe-keV" secondAttribute="centerX" id="Qlz-Xo-9c2"/>
+                            <constraint firstItem="29K-3T-T1Q" firstAttribute="centerY" secondItem="VQI-Pe-keV" secondAttribute="centerY" id="YPj-Wy-Dr6"/>
+                            <constraint firstItem="phg-o9-yFV" firstAttribute="leading" secondItem="VQI-Pe-keV" secondAttribute="leading" id="cJ6-O4-AWk"/>
+                            <constraint firstItem="29K-3T-T1Q" firstAttribute="top" secondItem="usI-dX-n2B" secondAttribute="bottom" id="qj9-1s-Zo0"/>
+                            <constraint firstItem="phg-o9-yFV" firstAttribute="top" secondItem="29K-3T-T1Q" secondAttribute="bottom" id="rlw-hI-Nln"/>
+                            <constraint firstAttribute="trailing" secondItem="usI-dX-n2B" secondAttribute="trailing" constant="25" id="vje-48-Ku7"/>
                             <constraint firstItem="OMv-Ir-bZa" firstAttribute="top" secondItem="phg-o9-yFV" secondAttribute="bottom" constant="25" id="zil-zj-Fhw"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="LXi-c8-8u4"/>
-                                <exclude reference="X2K-cg-3IG"/>
-                                <exclude reference="ihe-CX-Y41"/>
-                                <exclude reference="2Dh-N4-Iwf"/>
-                                <exclude reference="uRo-1Q-fAa"/>
+                                <exclude reference="qj9-1s-Zo0"/>
+                                <exclude reference="rlw-hI-Nln"/>
                             </mask>
                         </variation>
                     </view>
