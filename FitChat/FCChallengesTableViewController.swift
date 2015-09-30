@@ -44,6 +44,8 @@ class FCChallengesTableViewController: UIViewController {
             success: {
                 credential, response, parameters in
                 self.credential = credential;
+                let defaults = NSUserDefaults.standardUserDefaults();
+                defaults.setObject(self.credential.oauth_token, forKey: "AuthToken");
             },
             failure: {
                 (error:NSError!) -> Void in print(error.localizedDescription)
@@ -53,7 +55,7 @@ class FCChallengesTableViewController: UIViewController {
     @IBAction func request(sender: AnyObject) {
         doOAuthFitbit();
     }
-    
+        
     @IBAction func getUserProfile(sender: AnyObject) {
         let manager = AFHTTPRequestOperationManager();
         print(self.credential.oauth_token);

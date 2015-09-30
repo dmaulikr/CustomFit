@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A92CFF71BBB6DBE00F9FD9C /* FCFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A92CFF61BBB6DBE00F9FD9C /* FCFriendsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4A92CFF91BBB717700F9FD9C /* FCFriendListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A92CFF81BBB717700F9FD9C /* FCFriendListTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		4ADFBED81B9475A8007A6726 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFBED71B9475A8007A6726 /* AppDelegate.swift */; };
 		4ADFBEDA1B9475A8007A6726 /* FCChallengesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFBED91B9475A8007A6726 /* FCChallengesTableViewController.swift */; };
-		4ADFBEDC1B9475A8007A6726 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFBEDB1B9475A8007A6726 /* SecondViewController.swift */; };
 		4ADFBEDF1B9475A8007A6726 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ADFBEDD1B9475A8007A6726 /* Main.storyboard */; };
 		4ADFBEE11B9475A8007A6726 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADFBEE01B9475A8007A6726 /* Images.xcassets */; };
 		4ADFBEE41B9475A8007A6726 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADFBEE21B9475A8007A6726 /* LaunchScreen.xib */; };
@@ -30,12 +31,13 @@
 /* Begin PBXFileReference section */
 		09CD470ED1AA67D22EB8345E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		276AB9BC68B6CBDEC8EB14A9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4A92CFF61BBB6DBE00F9FD9C /* FCFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCFriendsTableViewController.swift; sourceTree = "<group>"; };
+		4A92CFF81BBB717700F9FD9C /* FCFriendListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCFriendListTableViewCell.swift; sourceTree = "<group>"; };
 		4ACC19621BBA728B0046311C /* FitChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FitChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		4ADFBED21B9475A8007A6726 /* FitChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADFBED61B9475A8007A6726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ADFBED71B9475A8007A6726 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ADFBED91B9475A8007A6726 /* FCChallengesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCChallengesTableViewController.swift; sourceTree = "<group>"; };
-		4ADFBEDB1B9475A8007A6726 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4ADFBEDE1B9475A8007A6726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4ADFBEE01B9475A8007A6726 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4ADFBEE31B9475A8007A6726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -98,12 +100,13 @@
 			children = (
 				4ADFBED71B9475A8007A6726 /* AppDelegate.swift */,
 				4ADFBED91B9475A8007A6726 /* FCChallengesTableViewController.swift */,
-				4ADFBEDB1B9475A8007A6726 /* SecondViewController.swift */,
 				4ADFBEDD1B9475A8007A6726 /* Main.storyboard */,
 				4ADFBEE01B9475A8007A6726 /* Images.xcassets */,
 				4ADFBEE21B9475A8007A6726 /* LaunchScreen.xib */,
 				4ADFBED51B9475A8007A6726 /* Supporting Files */,
 				4ACC19621BBA728B0046311C /* FitChat-Bridging-Header.h */,
+				4A92CFF61BBB6DBE00F9FD9C /* FCFriendsTableViewController.swift */,
+				4A92CFF81BBB717700F9FD9C /* FCFriendListTableViewCell.swift */,
 			);
 			path = FitChat;
 			sourceTree = "<group>";
@@ -294,8 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ADFBEDC1B9475A8007A6726 /* SecondViewController.swift in Sources */,
 				4ADFBED81B9475A8007A6726 /* AppDelegate.swift in Sources */,
+				4A92CFF71BBB6DBE00F9FD9C /* FCFriendsTableViewController.swift in Sources */,
+				4A92CFF91BBB717700F9FD9C /* FCFriendListTableViewCell.swift in Sources */,
 				4ADFBEDA1B9475A8007A6726 /* FCChallengesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
