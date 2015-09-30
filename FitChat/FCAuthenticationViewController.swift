@@ -37,7 +37,7 @@ class FCAuthenticationViewController: UIViewController {
             success: {
                 credential, response, parameters in
                 let defaults = NSUserDefaults.standardUserDefaults();
-                defaults.setObject(credential.oauth_token, forKey: "AuthToken");
+                defaults.setObject(credential.oauth_token, forKey: Constants.UserDefaultKey.AuthToken);
                 self.dismissViewControllerAnimated(true, completion: nil);
             },
             failure: {

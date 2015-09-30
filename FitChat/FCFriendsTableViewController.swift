@@ -17,8 +17,7 @@ class FCFriendsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        self.navigationItem.title = "Friends";
-        let authtoken:String = NSUserDefaults.standardUserDefaults().stringForKey("AuthToken")!;
+        let authtoken:String = NSUserDefaults.standardUserDefaults().stringForKey(Constants.UserDefaultKey.AuthToken)!;
         let manager = AFHTTPRequestOperationManager();
         
         let val = String(format: "Bearer %@", authtoken);
@@ -60,9 +59,9 @@ class FCFriendsTableViewController: UITableViewController {
         
         cell.nicknameLabel!.text = nickname;
         
+        // TODO-Dispatch on thread and cache for speed
         let avatarStr:String = data.objectForKey("avatar") as! String!;
         let url:NSURL = NSURL(string: avatarStr)!;
-//        print(url);
         if let data = NSData(contentsOfURL: url) {
             cell.avatar!.image = UIImage(data: data);
         }

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let defaults = NSUserDefaults.standardUserDefaults();
-        if defaults.stringForKey("AuthToken") == nil {
+        if defaults.stringForKey(Constants.UserDefaultKey.AuthToken) == nil {
             let tabBarController:UITabBarController = self.window?.rootViewController as! UITabBarController;
             let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle());
             let authController = storyboard.instantiateViewControllerWithIdentifier("AuthenticationViewController");

@@ -97,11 +97,11 @@ Get started by signing in below.</string>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--First-->
+        <!--Profile-->
         <scene sceneID="LvF-oT-qAB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eh6-Qe-B80" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6zR-m4-Jup">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -116,7 +116,7 @@ Get started by signing in below.</string>
             </objects>
             <point key="canvasLocation" x="1562" y="-320"/>
         </scene>
-        <!--Friends Table View Controller-->
+        <!--Friends-->
         <scene sceneID="hHz-vb-nj1">
             <objects>
                 <tableViewController id="Y5E-3Y-bmP" customClass="FCFriendsTableViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
@@ -166,16 +166,16 @@ Get started by signing in below.</string>
                             <outlet property="delegate" destination="Y5E-3Y-bmP" id="0wF-Gk-7xn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="g04-NY-Cio"/>
+                    <navigationItem key="navigationItem" title="Friends" id="g04-NY-Cio"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6W0-Kf-D9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="351"/>
         </scene>
-        <!--Challenges Table View Controller-->
+        <!--Profile-->
         <scene sceneID="4J6-d9-SjT">
             <objects>
-                <viewController id="G1r-BZ-L9f" customClass="FCChallengesTableViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="G1r-BZ-L9f" customClass="FCUserProfileViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VuM-hF-iRv"/>
                         <viewControllerLayoutGuide type="bottom" id="zzR-dE-8iX"/>
@@ -184,21 +184,45 @@ Get started by signing in below.</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mL-NR-Vu2">
-                                <rect key="frame" x="247" y="325" width="106" height="28"/>
-                                <state key="normal" title="Get user profile"/>
-                                <connections>
-                                    <action selector="getUserProfile:" destination="G1r-BZ-L9f" eventType="touchUpInside" id="bOb-XE-O26"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Nb-3W-sIz">
+                                <rect key="frame" x="15" y="89" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="l8N-AA-3Lg"/>
+                                    <constraint firstAttribute="height" constant="100" id="tEe-dr-sDn"/>
+                                    <constraint firstAttribute="width" secondItem="1Nb-3W-sIz" secondAttribute="height" multiplier="1:1" id="uGi-Hz-pzS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farwa Naqi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeQ-LZ-dgw">
+                                <rect key="frame" x="130" y="89" width="455" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Daily Steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yj5-lM-9gp">
+                                <rect key="frame" x="130" y="119.5" width="455" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5mL-NR-Vu2" firstAttribute="centerX" secondItem="BPx-Uj-Gm8" secondAttribute="centerX" id="Zk5-ns-ucA"/>
-                            <constraint firstItem="zzR-dE-8iX" firstAttribute="top" secondItem="5mL-NR-Vu2" secondAttribute="bottom" constant="198" id="cNG-eX-w3D"/>
+                            <constraint firstItem="yj5-lM-9gp" firstAttribute="trailing" secondItem="yeQ-LZ-dgw" secondAttribute="trailing" id="ArC-5F-fNp"/>
+                            <constraint firstAttribute="trailing" secondItem="yeQ-LZ-dgw" secondAttribute="trailing" constant="15" id="Opb-6Z-HZm"/>
+                            <constraint firstItem="1Nb-3W-sIz" firstAttribute="top" secondItem="VuM-hF-iRv" secondAttribute="bottom" constant="25" id="Pdv-aj-6e7"/>
+                            <constraint firstItem="yeQ-LZ-dgw" firstAttribute="leading" secondItem="1Nb-3W-sIz" secondAttribute="trailing" constant="15" id="ku2-6T-KNd"/>
+                            <constraint firstItem="yj5-lM-9gp" firstAttribute="leading" secondItem="yeQ-LZ-dgw" secondAttribute="leading" id="mgD-Ar-fDv"/>
+                            <constraint firstItem="yj5-lM-9gp" firstAttribute="top" secondItem="yeQ-LZ-dgw" secondAttribute="bottom" constant="10" id="pCc-Fy-ZHP"/>
+                            <constraint firstItem="1Nb-3W-sIz" firstAttribute="leading" secondItem="BPx-Uj-Gm8" secondAttribute="leading" constant="15" id="vt7-uL-iA6"/>
+                            <constraint firstItem="yeQ-LZ-dgw" firstAttribute="top" secondItem="1Nb-3W-sIz" secondAttribute="top" id="wT0-Lg-rYI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jWl-Hm-y8B"/>
+                    <navigationItem key="navigationItem" title="Profile" id="jWl-Hm-y8B"/>
+                    <connections>
+                        <outlet property="avatar" destination="1Nb-3W-sIz" id="554-fb-0MY"/>
+                        <outlet property="avgStepsLabel" destination="yj5-lM-9gp" id="q5o-XH-A1X"/>
+                        <outlet property="nameLabel" destination="yeQ-LZ-dgw" id="a64-OW-GO9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8P-qE-0Nt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,6 +250,5 @@ Get started by signing in below.</string>
     </scenes>
     <resources>
         <image name="HomePageHeader" width="1000" height="250"/>
-        <image name="first" width="30" height="30"/>
     </resources>
 </document>
