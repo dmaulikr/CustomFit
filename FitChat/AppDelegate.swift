@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let defaults = NSUserDefaults.standardUserDefaults();
+        if defaults.stringForKey("AuthToken") == nil {
+            let tabBarController:UITabBarController = self.window?.rootViewController as! UITabBarController;
+            let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle());
+            let authController = storyboard.instantiateViewControllerWithIdentifier("AuthenticationViewController");
+            self.window?.makeKeyAndVisible();
+            tabBarController.presentViewController(authController, animated: true, completion: nil);
+        }
         return true
     }
 

@@ -17,6 +17,7 @@ class FCFriendsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         
+        self.navigationItem.title = "Friends";
         let authtoken:String = NSUserDefaults.standardUserDefaults().stringForKey("AuthToken")!;
         let manager = AFHTTPRequestOperationManager();
         
