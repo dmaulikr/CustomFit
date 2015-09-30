@@ -1,5 +1,5 @@
 //
-//  FitbitAPI.swift
+//  FitbitAPIManager.swift
 //  FitChat
 //
 //  Created by Farwa Naqi on 2015-09-30.

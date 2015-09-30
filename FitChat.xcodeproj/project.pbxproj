@@ -11,7 +11,7 @@
 		4A92CFF91BBB717700F9FD9C /* FCFriendListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A92CFF81BBB717700F9FD9C /* FCFriendListTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		4A92CFFB1BBB996100F9FD9C /* FCAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A92CFFA1BBB996100F9FD9C /* FCAuthenticationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4A92CFFD1BBBADCA00F9FD9C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A92CFFC1BBBADCA00F9FD9C /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
-		4A92CFFF1BBC508B00F9FD9C /* FitbitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A92CFFE1BBC508B00F9FD9C /* FitbitAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		4A92CFFF1BBC508B00F9FD9C /* FitbitAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A92CFFE1BBC508B00F9FD9C /* FitbitAPIManager.swift */; settings = {ASSET_TAGS = (); }; };
 		4ADFBED81B9475A8007A6726 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFBED71B9475A8007A6726 /* AppDelegate.swift */; };
 		4ADFBEDA1B9475A8007A6726 /* FCUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFBED91B9475A8007A6726 /* FCUserProfileViewController.swift */; };
 		4ADFBEDF1B9475A8007A6726 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ADFBEDD1B9475A8007A6726 /* Main.storyboard */; };
@@ -38,7 +38,7 @@
 		4A92CFF81BBB717700F9FD9C /* FCFriendListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCFriendListTableViewCell.swift; sourceTree = "<group>"; };
 		4A92CFFA1BBB996100F9FD9C /* FCAuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCAuthenticationViewController.swift; sourceTree = "<group>"; };
 		4A92CFFC1BBBADCA00F9FD9C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		4A92CFFE1BBC508B00F9FD9C /* FitbitAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitbitAPI.swift; sourceTree = "<group>"; };
+		4A92CFFE1BBC508B00F9FD9C /* FitbitAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitbitAPIManager.swift; sourceTree = "<group>"; };
 		4ACC19621BBA728B0046311C /* FitChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FitChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		4ADFBED21B9475A8007A6726 /* FitChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADFBED61B9475A8007A6726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				4A92CFF81BBB717700F9FD9C /* FCFriendListTableViewCell.swift */,
 				4A92CFFA1BBB996100F9FD9C /* FCAuthenticationViewController.swift */,
 				4A92CFFC1BBBADCA00F9FD9C /* Constants.swift */,
-				4A92CFFE1BBC508B00F9FD9C /* FitbitAPI.swift */,
+				4A92CFFE1BBC508B00F9FD9C /* FitbitAPIManager.swift */,
 			);
 			path = FitChat;
 			sourceTree = "<group>";
@@ -309,7 +309,7 @@
 				4ADFBED81B9475A8007A6726 /* AppDelegate.swift in Sources */,
 				4A92CFF71BBB6DBE00F9FD9C /* FCFriendsTableViewController.swift in Sources */,
 				4A92CFFB1BBB996100F9FD9C /* FCAuthenticationViewController.swift in Sources */,
-				4A92CFFF1BBC508B00F9FD9C /* FitbitAPI.swift in Sources */,
+				4A92CFFF1BBC508B00F9FD9C /* FitbitAPIManager.swift in Sources */,
 				4A92CFF91BBB717700F9FD9C /* FCFriendListTableViewCell.swift in Sources */,
 				4ADFBEDA1B9475A8007A6726 /* FCUserProfileViewController.swift in Sources */,
 				4A92CFFD1BBBADCA00F9FD9C /* Constants.swift in Sources */,
