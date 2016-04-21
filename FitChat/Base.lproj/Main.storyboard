@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gli-3w-ShR">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Authentication View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="xOW-cE-tlL">
             <objects>
-                <viewController storyboardIdentifier="AuthenticationViewController" id="HUD-3w-5bx" customClass="FCAuthenticationViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthenticationViewController" id="HUD-3w-5bx" customClass="LoginViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="80K-X2-dI8"/>
                         <viewControllerLayoutGuide type="bottom" id="OMv-Ir-bZa"/>
@@ -18,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomePageHeader" translatesAutoresizingMaskIntoConstraints="NO" id="usI-dX-n2B">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="HomePageHeader" translatesAutoresizingMaskIntoConstraints="NO" id="usI-dX-n2B">
                                 <rect key="frame" x="25" y="45" width="550" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fwB-Tb-LJ7"/>
@@ -35,7 +34,7 @@
                                     <color key="titleColor" red="0.97365736874670727" green="1" blue="0.9804096159118546" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="requestFitbitAccess:" destination="HUD-3w-5bx" eventType="touchUpInside" id="VKq-Id-MvX"/>
+                                    <segue destination="abN-DD-UVO" kind="presentation" id="15S-tH-0nZ"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29K-3T-T1Q">
@@ -44,7 +43,7 @@
                                     <constraint firstAttribute="height" constant="180" id="lsG-gp-7eK"/>
                                     <constraint firstAttribute="width" constant="265" id="v2v-Ml-zdg"/>
                                 </constraints>
-                                <string key="text">FitChat is an extension of the Fitbit app that allows you to create your own custom fitness challenges, chat with friends, and share workout logs and photos
+                                <string key="text">CustomFit is an extension of the Fitbit app that allows you to create your own custom fitness challenges, chat with friends, and share workout logs and photos
 
 Get started by signing in below.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
@@ -75,12 +74,12 @@ Get started by signing in below.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uqj-6m-WjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="-690"/>
+            <point key="canvasLocation" x="1608" y="-690"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -90,12 +89,36 @@ Get started by signing in below.</string>
                     <connections>
                         <segue destination="eh6-Qe-B80" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="mCu-Sv-VBS" kind="relationship" relationship="viewControllers" id="cgi-LD-dS5"/>
-                        <segue destination="HUD-3w-5bx" kind="presentation" identifier="AuthenticationSegue" id="uYF-B1-s5W"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Authentication View Controller-->
+        <scene sceneID="J4k-M9-ja8">
+            <objects>
+                <viewController id="DLu-ja-EqN" customClass="AuthenticationViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aoF-lh-Xla"/>
+                        <viewControllerLayoutGuide type="bottom" id="zqw-Er-wgU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RL1-u2-hTO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="f3i-lk-8bf">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="2Mq-P7-gan">
+                            <connections>
+                                <action selector="cancelLogin:" destination="DLu-ja-EqN" id="AWn-5T-EMS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mH-Xb-HxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3145" y="-734"/>
         </scene>
         <!--Profile-->
         <scene sceneID="LvF-oT-qAB">
@@ -114,22 +137,22 @@ Get started by signing in below.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rY6-hi-C0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="-320"/>
+            <point key="canvasLocation" x="1568" y="-5"/>
         </scene>
         <!--Friends-->
         <scene sceneID="hHz-vb-nj1">
             <objects>
-                <tableViewController id="Y5E-3Y-bmP" customClass="FCFriendsTableViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Y5E-3Y-bmP" customClass="FriendsTableViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="126" sectionHeaderHeight="28" sectionFooterHeight="28" id="uWC-Jc-91f">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCellReuseId" rowHeight="126" id="RKe-M5-gXT" customClass="FCFriendListTableViewCell" customModule="FitChat" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCellReuseId" rowHeight="126" id="RKe-M5-gXT" customClass="FriendListTableViewCell" customModule="FitChat" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="126"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RKe-M5-gXT" id="4cm-3x-fsm">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="125.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZi-Rb-TuT">
@@ -141,9 +164,9 @@ Get started by signing in below.</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nm8-Ka-JPL">
-                                            <rect key="frame" x="130" y="52.5" width="455" height="20.5"/>
+                                            <rect key="frame" x="130" y="52" width="455" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -170,12 +193,12 @@ Get started by signing in below.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6W0-Kf-D9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="351"/>
+            <point key="canvasLocation" x="1568" y="751"/>
         </scene>
         <!--Profile-->
         <scene sceneID="4J6-d9-SjT">
             <objects>
-                <viewController id="G1r-BZ-L9f" customClass="FCUserProfileViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileViewController" id="G1r-BZ-L9f" customClass="UserProfileViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VuM-hF-iRv"/>
                         <viewControllerLayoutGuide type="bottom" id="zzR-dE-8iX"/>
@@ -195,13 +218,13 @@ Get started by signing in below.</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farwa Naqi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeQ-LZ-dgw">
                                 <rect key="frame" x="130" y="89" width="455" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Daily Steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yj5-lM-9gp">
                                 <rect key="frame" x="130" y="119.5" width="455" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -226,7 +249,7 @@ Get started by signing in below.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8P-qE-0Nt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3097" y="-283"/>
+            <point key="canvasLocation" x="4721" y="-283"/>
         </scene>
         <!--Friends-->
         <scene sceneID="UH7-n7-anj">
@@ -246,6 +269,42 @@ Get started by signing in below.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMe-4p-elM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="351"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J01-67-SwP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="abN-DD-UVO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mCL-ch-6Hm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DLu-ja-EqN" kind="relationship" relationship="rootViewController" id="v9o-Jx-2UI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rv0-mT-kdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2333" y="-734"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jj5-Sn-ta3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gli-3w-ShR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nyn-tz-0eN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HUD-3w-5bx" kind="relationship" relationship="rootViewController" id="QnQ-N6-5Li"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YPp-H7-yHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="-690"/>
         </scene>
     </scenes>
     <resources>

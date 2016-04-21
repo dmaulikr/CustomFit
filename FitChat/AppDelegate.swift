@@ -1,13 +1,12 @@
 //
 //  AppDelegate.swift
-//  FitChat
+//  CustomFit
 //
 //  Created by Farwa Naqi on 2015-08-31.
 //  Copyright (c) 2015 Farwa Naqi. All rights reserved.
 //
 
 import UIKit
-import OAuthSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,14 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let defaults = NSUserDefaults.standardUserDefaults();
-        if defaults.stringForKey(Constants.UserDefaultKey.AuthToken) == nil {
-            let tabBarController:UITabBarController = self.window?.rootViewController as! UITabBarController;
-            let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle());
-            let authController = storyboard.instantiateViewControllerWithIdentifier("AuthenticationViewController");
-            self.window?.makeKeyAndVisible();
-            tabBarController.presentViewController(authController, animated: true, completion: nil);
-        }
         return true
     }
 
@@ -49,21 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        if (url.host == "oauth-callback") {
-            if (url.path!.hasPrefix("/twitter") || url.path!.hasPrefix("/flickr")
-                || url.path!.hasPrefix("/withings") || url.path!.hasPrefix("/linkedin") || url.path!.hasPrefix("/bitbucket") || url.path!.hasPrefix("/smugmug") || url.path!.hasPrefix("/intuit") || url.path!.hasPrefix("/zaim") || url.path!.hasPrefix("/tumblr")) {
-                    OAuth1Swift.handleOpenURL(url)
-            }
-            if ( url.path!.hasPrefix("/github" ) || url.path!.hasPrefix("/instagram" ) || url.path!.hasPrefix("/foursquare") || url.path!.hasPrefix("/dropbox") || url.path!.hasPrefix("/dribbble") || url.path!.hasPrefix("/salesforce") || url.path!.hasPrefix("/google") || url.path!.hasPrefix("/linkedin2") || url.path!.hasPrefix("/slack") || url.path!.hasPrefix("/uber")) {
-                OAuth2Swift.handleOpenURL(url)
-            }
-        } else {
-            // Google provider is the only one wuth your.bundle.id url schema.
-            OAuth2Swift.handleOpenURL(url)
-        }
         return true
     }
 
 
 }
-

@@ -1,42 +1,99 @@
 //
 //  FitbitAPIManager.swift
-//  FitChat
+//  CustomFit
 //
 //  Created by Farwa Naqi on 2015-09-30.
 //  Copyright © 2015 Farwa Naqi. All rights reserved.
 //
 
 import Foundation
-import AFNetworking
+import Alamofire
 
-struct Get {
-    static let Friends = "https://api.fitbit.com/1/user/%@/friends.json"
-    static let FriendsLeaderboard = "https://api.fitbit.com/1/user/%@/friends/leaderboard.json"
-    static let FriendInvitations = "https://api.fitbit.com/1/user/%@/friends/invitations.json";
-    static let Badges = "https://api.fitbit.com/1/user/%@/badges.json"
-    static let Profile = "https://api.fitbit.com/1/user/-/profile.json"
-}
-
-struct Post {
-    static let InviteFriend = "https://api.fitbit.com/1/user/-/friends/invitations.json"
-    static let RespondToFriendInvite = "https://api.fitbit.com/1/user/-/friends/invitations/%@.json";
-}
-
-struct RequestManager {
-    static let manager = AFHTTPRequestOperationManager();
-    static let authToken:String = String(format: "Bearer %@", NSUserDefaults.standardUserDefaults().stringForKey(Constants.UserDefaultKey.AuthToken) as String!);
+class FitbitAPIManager {
+    static let baseURL: String = "https://api.fitbit.com"
     
-    // GET friends request
-    static func getFriends(userId: String, parameters: AnyObject?, success: ((AFHTTPRequestOperation, AnyObject) -> Void)?, failure: ((AFHTTPRequestOperation, NSError) -> Void)?) {
-        manager.requestSerializer.setValue(authToken, forHTTPHeaderField: "Authorization");
-        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content-Type");
-        manager.GET(String(format: Get.Friends, userId), parameters: parameters, success: success, failure: failure);
+    static func buildRequest(path: String, method: Alamofire.Method) -> NSMutableURLRequest {
+        let URL = NSURL(string: FitbitAPIManager.baseURL)!
+        let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
+        mutableURLRequest.HTTPMethod = method.rawValue
+        
+        if let accessToken = AuthUtils.getAccessToken() {
+            mutableURLRequest.setValue("Bearer \(accessToken.tokenString)", forHTTPHeaderField: "Authorization")
+        }
+        
+        return mutableURLRequest
     }
     
-    // GET user profile request
-    static func getProfile(parameters: AnyObject?, success: ((AFHTTPRequestOperation, AnyObject) -> Void)?, failure: ((AFHTTPRequestOperation, NSError) -> Void)?) {
-        manager.requestSerializer.setValue(authToken, forHTTPHeaderField: "Authorization");
-        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content-Type");
-        manager.GET(Get.Profile, parameters: parameters, success: success, failure: failure);
+    static func getLoginURL() -> NSURL {
+        let scopes = [Scopes.Activity, Scopes.Profile, Scopes.Social]
+        
+        let components = NSURLComponents(string: "https://www.fitbit.com/oauth2/authorize")!
+        var queryItems = [NSURLQueryItem]()
+        queryItems.append(NSURLQueryItem(name: Login.ClientID, value: App.AppID))
+        queryItems.append(NSURLQueryItem(name: Login.ResponseType, value: OAuth.Token))
+        queryItems.append(NSURLQueryItem(name: Login.Scope, value: scopes.joinWithSeparator(" ")))
+        queryItems.append(NSURLQueryItem(name: Login.RedirectURI, value: App.Callback))
+        queryItems.append(NSURLQueryItem(name: Login.ExpiresIn, value: Expires.Month))
+        components.queryItems = queryItems
+        
+        return components.URL!
+    }
+}
+
+enum UserRouter: URLRequestConvertible {
+    case Profile(String)
+    case Badges(String)
+    case Update(String)
+    
+    var method: Alamofire.Method {
+        switch self {
+        case Profile:
+            return .GET
+        case Badges:
+            return .GET
+        case Update:
+            return .POST
+        }
+    }
+    
+    var path: String {
+        switch self {
+        case Profile(let userID):
+            return "1/user/\(userID)/profile.json"
+        case Badges(let userID):
+            return "1/user/\(userID)/badges.json"
+        case Update(let userID):
+            return "1/user/\(userID)/profile.json"
+        }
+    }
+    
+    // MARK: URLRequestConvertible
+    
+    var URLRequest: NSMutableURLRequest {
+        return FitbitAPIManager.buildRequest(path, method: method)
+    }
+}
+
+enum FriendsRouter: URLRequestConvertible {
+    case All(String)
+    case Leaderboard(String)
+    
+    var method: Alamofire.Method {
+        return .GET
+    }
+    
+    var path: String {
+        switch self {
+        case All(let userID):
+            return "1/user/\(userID)/friends"
+        case Leaderboard(let userID):
+            return "1/user/\(userID)/friends/leaderboard.json"
+        }
+    }
+    
+    // MARK: URLRequestConvertible
+    
+    var URLRequest: NSMutableURLRequest {
+        return FitbitAPIManager.buildRequest(path, method: method)
     }
 }
