@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gli-3w-ShR">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -8,7 +9,7 @@
         <!--Login View Controller-->
         <scene sceneID="xOW-cE-tlL">
             <objects>
-                <viewController storyboardIdentifier="AuthenticationViewController" id="HUD-3w-5bx" customClass="LoginViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthenticationViewController" id="HUD-3w-5bx" customClass="LoginViewController" customModule="CustomFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="80K-X2-dI8"/>
                         <viewControllerLayoutGuide type="bottom" id="OMv-Ir-bZa"/>
@@ -88,7 +89,6 @@ Get started by signing in below.</string>
                     </tabBar>
                     <connections>
                         <segue destination="eh6-Qe-B80" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="mCu-Sv-VBS" kind="relationship" relationship="viewControllers" id="cgi-LD-dS5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -98,7 +98,7 @@ Get started by signing in below.</string>
         <!--Authentication View Controller-->
         <scene sceneID="J4k-M9-ja8">
             <objects>
-                <viewController id="DLu-ja-EqN" customClass="AuthenticationViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DLu-ja-EqN" customClass="AuthenticationViewController" customModule="CustomFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aoF-lh-Xla"/>
                         <viewControllerLayoutGuide type="bottom" id="zqw-Er-wgU"/>
@@ -139,66 +139,10 @@ Get started by signing in below.</string>
             </objects>
             <point key="canvasLocation" x="1568" y="-5"/>
         </scene>
-        <!--Friends-->
-        <scene sceneID="hHz-vb-nj1">
-            <objects>
-                <tableViewController id="Y5E-3Y-bmP" customClass="FriendsTableViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="126" sectionHeaderHeight="28" sectionFooterHeight="28" id="uWC-Jc-91f">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCellReuseId" rowHeight="126" id="RKe-M5-gXT" customClass="FriendListTableViewCell" customModule="FitChat" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="126"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RKe-M5-gXT" id="4cm-3x-fsm">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="125"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZi-Rb-TuT">
-                                            <rect key="frame" x="15" y="13" width="100" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="ie0-ZJ-Cmq"/>
-                                                <constraint firstAttribute="height" constant="100" id="lW3-G0-I90"/>
-                                                <constraint firstAttribute="width" secondItem="iZi-Rb-TuT" secondAttribute="height" multiplier="1:1" id="nOt-P6-shG"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nm8-Ka-JPL">
-                                            <rect key="frame" x="130" y="52" width="455" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Nm8-Ka-JPL" firstAttribute="leading" secondItem="iZi-Rb-TuT" secondAttribute="trailing" constant="15" id="9OM-Qp-2gM"/>
-                                        <constraint firstItem="iZi-Rb-TuT" firstAttribute="centerY" secondItem="4cm-3x-fsm" secondAttribute="centerY" id="Dqg-rj-unD"/>
-                                        <constraint firstItem="iZi-Rb-TuT" firstAttribute="leading" secondItem="4cm-3x-fsm" secondAttribute="leading" constant="15" id="VB7-fg-rRZ"/>
-                                        <constraint firstItem="Nm8-Ka-JPL" firstAttribute="centerY" secondItem="4cm-3x-fsm" secondAttribute="centerY" id="lWp-HB-kgj"/>
-                                        <constraint firstAttribute="trailing" secondItem="Nm8-Ka-JPL" secondAttribute="trailing" constant="15" id="wjO-8s-i0T"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="avatar" destination="iZi-Rb-TuT" id="AkT-YJ-eWZ"/>
-                                    <outlet property="nicknameLabel" destination="Nm8-Ka-JPL" id="b0N-4l-MeI"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Y5E-3Y-bmP" id="qka-Zu-JwW"/>
-                            <outlet property="delegate" destination="Y5E-3Y-bmP" id="0wF-Gk-7xn"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Friends" id="g04-NY-Cio"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6W0-Kf-D9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1568" y="751"/>
-        </scene>
         <!--Profile-->
         <scene sceneID="4J6-d9-SjT">
             <objects>
-                <viewController storyboardIdentifier="UserProfileViewController" id="G1r-BZ-L9f" customClass="UserProfileViewController" customModule="FitChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileViewController" id="G1r-BZ-L9f" customClass="UserProfileViewController" customModule="CustomFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VuM-hF-iRv"/>
                         <viewControllerLayoutGuide type="bottom" id="zzR-dE-8iX"/>
@@ -250,25 +194,6 @@ Get started by signing in below.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8P-qE-0Nt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4721" y="-283"/>
-        </scene>
-        <!--Friends-->
-        <scene sceneID="UH7-n7-anj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mCu-Sv-VBS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="2Jh-fp-29d"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rDc-mK-FL2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Y5E-3Y-bmP" kind="relationship" relationship="rootViewController" id="MEJ-x2-vIO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mMe-4p-elM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="351"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="J01-67-SwP">
